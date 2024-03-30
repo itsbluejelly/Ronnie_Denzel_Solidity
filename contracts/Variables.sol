@@ -2,15 +2,17 @@
 pragma solidity ^0.8.25;
 
 contract Variables{
-    uint8 number = 20;
-    bool paused = true;
-    uint time = block.timestamp;
+    uint8 public number = 20;
+    bool private _paused = true;
+    uint internal _time = block.timestamp;
 
-    function myFunc() external view returns(uint8, bool, address){
-        uint8 myLocalNumber = 20;
-        bool localPaused = false;
+    function setPrivate(bool _value) public {
+        _paused = _value;
+    }
+
+    function myFunc() external view returns(bool, address){
         address myAddress = msg.sender;
 
-        return (myLocalNumber, localPaused, myAddress); 
+        return (_paused, myAddress); 
     }
 }

@@ -7,6 +7,32 @@
 		"abi": [
 			{
 				"inputs": [],
+				"name": "awesomeVar",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "myFunc",
 				"outputs": [
 					{
@@ -63,7 +89,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Variables.sol": "Variables"
+			"Main.sol": "MainContract"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -77,6 +103,14 @@
 		"remappings": []
 	},
 	"sources": {
+		"Main.sol": {
+			"keccak256": "0xa78f8b572132dad8746f7f718a29eddcd28367db153013168625f0a4c389b72f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a17abdf51b2c2d16cd98ffb013a5f7a967eb0760b40954fb2fbe73d5f8183ac",
+				"dweb:/ipfs/QmYx5SHk8rx75CaNyV6zM5KjCjTmG7fEFAfmb5YkVH6Qft"
+			]
+		},
 		"contracts/Variables.sol": {
 			"keccak256": "0xc9454377a5c10e4620ccd3ae7f768efdb5f72e275c7b9dda7b0cb12ff87090c7",
 			"license": "MIT",
