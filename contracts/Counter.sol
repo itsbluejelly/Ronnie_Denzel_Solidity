@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.25;
 
-// IMPORTING NECESSARY CONTRACTS
+// IMPORTING NECESSARY FILES
+    // IMPORTING CONTRACTS
 import "@openzeppelin/contracts/access/Ownable.sol";
+    // IMPORTING INTERFACES
+import "interfaces/ICounter.sol";
 
-contract CounterContract is Ownable(msg.sender){
+contract CounterContract is Ownable(msg.sender), ICounter{
     // DECLARING VARIABLES
     uint public count = 0;
     bool public counterActivated = true;

@@ -168,7 +168,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Counter.sol": "CounterContract"
+			"contracts/Counter.sol": "test"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -199,19 +199,11 @@
 			]
 		},
 		"contracts/Counter.sol": {
-			"keccak256": "0x74cab94bcb28533a2f67a3c224fadcb682c78ff8612f382b664fde3534cd0728",
+			"keccak256": "0x3ee261aa7f8945ca2dfdd27b1fab79c760850fc33770216a78bef1d3f6c2706d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://46aea3b665f0b3cc44d685303d57a1cfae9a5d41ce4c658880156cd36e9b2cfb",
-				"dweb:/ipfs/QmZZ52euyVL774JyPr1ePHJmT6TcCJFfGBb9Z9yb45rpWE"
-			]
-		},
-		"interfaces/ICounter.sol": {
-			"keccak256": "0x87f6945e700e63a547216c1d46381d21545b189a7e3a2ace515ca4cf76624e7a",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://9de1c769c657e51db1b0bfa08c5e020b15813e8b55d5a56cccb00144719d6821",
-				"dweb:/ipfs/QmYvqcgwhgbfgmCxhe5UMw6kAkQJ3eP9M582Knz3N5QEyH"
+				"bzz-raw://2c0286e7c6b8f05ed4f2cb3e4a62b0d91e22efd011d74a31f37f1e5cd71c6f5f",
+				"dweb:/ipfs/QmT2jwqwc9xxd326KLrkE4Nvfm6zFS5JtdgnzZMBLzpTfY"
 			]
 		}
 	},
