@@ -51,7 +51,8 @@
 		"methodIdentifiers": {
 			"decreaseCount()": "e834cbb3",
 			"increaseCount()": "abd1b73d",
-			"setCounterActivated(bool)": "68fcb1c1"
+			"setCounterActivated(bool)": "68fcb1c1",
+			"setTransactionCost(uint256)": "1236b529"
 		}
 	},
 	"abi": [
@@ -59,14 +60,14 @@
 			"inputs": [],
 			"name": "decreaseCount",
 			"outputs": [],
-			"stateMutability": "nonpayable",
+			"stateMutability": "payable",
 			"type": "function"
 		},
 		{
 			"inputs": [],
 			"name": "increaseCount",
 			"outputs": [],
-			"stateMutability": "nonpayable",
+			"stateMutability": "payable",
 			"type": "function"
 		},
 		{
@@ -78,6 +79,19 @@
 				}
 			],
 			"name": "setCounterActivated",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_value",
+					"type": "uint256"
+				}
+			],
+			"name": "setTransactionCost",
 			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"

@@ -9,14 +9,14 @@
 				"inputs": [],
 				"name": "decreaseCount",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
 				"name": "increaseCount",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -28,6 +28,19 @@
 					}
 				],
 				"name": "setCounterActivated",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "setTransactionCost",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -61,11 +74,11 @@
 	},
 	"sources": {
 		"interfaces/ICounter.sol": {
-			"keccak256": "0x87f6945e700e63a547216c1d46381d21545b189a7e3a2ace515ca4cf76624e7a",
+			"keccak256": "0x20ca4277683b8b9be78bd247c16f9a011ea7b33c7423dc6da5bb2b10fea867f5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9de1c769c657e51db1b0bfa08c5e020b15813e8b55d5a56cccb00144719d6821",
-				"dweb:/ipfs/QmYvqcgwhgbfgmCxhe5UMw6kAkQJ3eP9M582Knz3N5QEyH"
+				"bzz-raw://07038ac509a5a4d0f676ddb66ea138246f2648638f4454a52ed8bf718b160da8",
+				"dweb:/ipfs/QmaRdzKMjT1YdDisQyRmHj6RzhxLswLMFv8oqpGcvc7MNs"
 			]
 		}
 	},

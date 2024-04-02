@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -76,14 +81,14 @@
 				"inputs": [],
 				"name": "decreaseCount",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
 				"name": "increaseCount",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -122,12 +127,45 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "setTransactionCost",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "transactionCost",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "newOwner",
 						"type": "address"
 					}
 				],
 				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawFunds",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -199,19 +237,19 @@
 			]
 		},
 		"contracts/Counter.sol": {
-			"keccak256": "0x74cab94bcb28533a2f67a3c224fadcb682c78ff8612f382b664fde3534cd0728",
+			"keccak256": "0x8c791431bbacb43aa3d84ef6479fe149d3e3358bbc63380448377e7fbc1f0fab",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://46aea3b665f0b3cc44d685303d57a1cfae9a5d41ce4c658880156cd36e9b2cfb",
-				"dweb:/ipfs/QmZZ52euyVL774JyPr1ePHJmT6TcCJFfGBb9Z9yb45rpWE"
+				"bzz-raw://9fa4f1dbce919ec4bcc17ac7ec086a89e1d71cef8119c7aa43a70f4507f14397",
+				"dweb:/ipfs/QmYvjZt2napcbjtuEj83jDvF54xuSaMh6nBPwoKg6x5kTY"
 			]
 		},
 		"interfaces/ICounter.sol": {
-			"keccak256": "0x87f6945e700e63a547216c1d46381d21545b189a7e3a2ace515ca4cf76624e7a",
+			"keccak256": "0x20ca4277683b8b9be78bd247c16f9a011ea7b33c7423dc6da5bb2b10fea867f5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9de1c769c657e51db1b0bfa08c5e020b15813e8b55d5a56cccb00144719d6821",
-				"dweb:/ipfs/QmYvqcgwhgbfgmCxhe5UMw6kAkQJ3eP9M582Knz3N5QEyH"
+				"bzz-raw://07038ac509a5a4d0f676ddb66ea138246f2648638f4454a52ed8bf718b160da8",
+				"dweb:/ipfs/QmaRdzKMjT1YdDisQyRmHj6RzhxLswLMFv8oqpGcvc7MNs"
 			]
 		}
 	},

@@ -1,5 +1,5 @@
 {
-	"id": "6dcda28407a1ed1a3376661efe22ed2f",
+	"id": "c8d241dc6f02ad8368c3938f0b9ea839",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.25",
 	"solcLongVersion": "0.8.25+commit.b61c2a91",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"interfaces/ICounter.sol": {
-				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.25;\r\n\r\ninterface ICounter{\r\n    function setCounterActivated(bool _counterActivated) external;\r\n    function increaseCount() external;\r\n    function decreaseCount() external;\r\n}"
+				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.25;\r\n\r\ninterface ICounter{\r\n    function setTransactionCost(uint _value) external ;\r\n    function setCounterActivated(bool _counterActivated) external;\r\n    function increaseCount() external payable ;\r\n    function decreaseCount() external payable ;\r\n}"
 			}
 		},
 		"settings": {
@@ -47,14 +47,14 @@
 							"inputs": [],
 							"name": "decreaseCount",
 							"outputs": [],
-							"stateMutability": "nonpayable",
+							"stateMutability": "payable",
 							"type": "function"
 						},
 						{
 							"inputs": [],
 							"name": "increaseCount",
 							"outputs": [],
-							"stateMutability": "nonpayable",
+							"stateMutability": "payable",
 							"type": "function"
 						},
 						{
@@ -66,6 +66,19 @@
 								}
 							],
 							"name": "setCounterActivated",
+							"outputs": [],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "uint256",
+									"name": "_value",
+									"type": "uint256"
+								}
+							],
+							"name": "setTransactionCost",
 							"outputs": [],
 							"stateMutability": "nonpayable",
 							"type": "function"
@@ -100,10 +113,11 @@
 						"methodIdentifiers": {
 							"decreaseCount()": "e834cbb3",
 							"increaseCount()": "abd1b73d",
-							"setCounterActivated(bool)": "68fcb1c1"
+							"setCounterActivated(bool)": "68fcb1c1",
+							"setTransactionCost(uint256)": "1236b529"
 						}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.25+commit.b61c2a91\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"decreaseCount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"increaseCount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_counterActivated\",\"type\":\"bool\"}],\"name\":\"setCounterActivated\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"interfaces/ICounter.sol\":\"ICounter\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"interfaces/ICounter.sol\":{\"keccak256\":\"0x87f6945e700e63a547216c1d46381d21545b189a7e3a2ace515ca4cf76624e7a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9de1c769c657e51db1b0bfa08c5e020b15813e8b55d5a56cccb00144719d6821\",\"dweb:/ipfs/QmYvqcgwhgbfgmCxhe5UMw6kAkQJ3eP9M582Knz3N5QEyH\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.25+commit.b61c2a91\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"decreaseCount\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"increaseCount\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_counterActivated\",\"type\":\"bool\"}],\"name\":\"setCounterActivated\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"setTransactionCost\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"interfaces/ICounter.sol\":\"ICounter\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"interfaces/ICounter.sol\":{\"keccak256\":\"0x20ca4277683b8b9be78bd247c16f9a011ea7b33c7423dc6da5bb2b10fea867f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://07038ac509a5a4d0f676ddb66ea138246f2648638f4454a52ed8bf718b160da8\",\"dweb:/ipfs/QmaRdzKMjT1YdDisQyRmHj6RzhxLswLMFv8oqpGcvc7MNs\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -122,10 +136,10 @@
 					"absolutePath": "interfaces/ICounter.sol",
 					"exportedSymbols": {
 						"ICounter": [
-							13
+							18
 						]
 					},
-					"id": 14,
+					"id": 19,
 					"license": "MIT",
 					"nodeType": "SourceUnit",
 					"nodes": [
@@ -147,22 +161,22 @@
 							"contractDependencies": [],
 							"contractKind": "interface",
 							"fullyImplemented": false,
-							"id": 13,
+							"id": 18,
 							"linearizedBaseContracts": [
-								13
+								18
 							],
 							"name": "ICounter",
 							"nameLocation": "71:8:0",
 							"nodeType": "ContractDefinition",
 							"nodes": [
 								{
-									"functionSelector": "68fcb1c1",
+									"functionSelector": "1236b529",
 									"id": 6,
 									"implemented": false,
 									"kind": "function",
 									"modifiers": [],
-									"name": "setCounterActivated",
-									"nameLocation": "95:19:0",
+									"name": "setTransactionCost",
+									"nameLocation": "95:18:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
 										"id": 4,
@@ -172,11 +186,66 @@
 												"constant": false,
 												"id": 3,
 												"mutability": "mutable",
-												"name": "_counterActivated",
-												"nameLocation": "120:17:0",
+												"name": "_value",
+												"nameLocation": "119:6:0",
 												"nodeType": "VariableDeclaration",
 												"scope": 6,
-												"src": "115:22:0",
+												"src": "114:11:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 2,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "114:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "113:13:0"
+									},
+									"returnParameters": {
+										"id": 5,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "136:0:0"
+									},
+									"scope": 18,
+									"src": "86:51:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"functionSelector": "68fcb1c1",
+									"id": 11,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "setCounterActivated",
+									"nameLocation": "152:19:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 9,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 8,
+												"mutability": "mutable",
+												"name": "_counterActivated",
+												"nameLocation": "177:17:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 11,
+												"src": "172:22:0",
 												"stateVariable": false,
 												"storageLocation": "default",
 												"typeDescriptions": {
@@ -184,10 +253,10 @@
 													"typeString": "bool"
 												},
 												"typeName": {
-													"id": 2,
+													"id": 7,
 													"name": "bool",
 													"nodeType": "ElementaryTypeName",
-													"src": "115:4:0",
+													"src": "172:4:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_bool",
 														"typeString": "bool"
@@ -196,82 +265,82 @@
 												"visibility": "internal"
 											}
 										],
-										"src": "114:24:0"
+										"src": "171:24:0"
 									},
 									"returnParameters": {
-										"id": 5,
+										"id": 10,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "147:0:0"
+										"src": "204:0:0"
 									},
-									"scope": 13,
-									"src": "86:62:0",
+									"scope": 18,
+									"src": "143:62:0",
 									"stateMutability": "nonpayable",
 									"virtual": false,
 									"visibility": "external"
 								},
 								{
 									"functionSelector": "abd1b73d",
-									"id": 9,
+									"id": 14,
 									"implemented": false,
 									"kind": "function",
 									"modifiers": [],
 									"name": "increaseCount",
-									"nameLocation": "163:13:0",
+									"nameLocation": "220:13:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
-										"id": 7,
+										"id": 12,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "176:2:0"
+										"src": "233:2:0"
 									},
 									"returnParameters": {
-										"id": 8,
+										"id": 13,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "187:0:0"
+										"src": "253:0:0"
 									},
-									"scope": 13,
-									"src": "154:34:0",
-									"stateMutability": "nonpayable",
+									"scope": 18,
+									"src": "211:43:0",
+									"stateMutability": "payable",
 									"virtual": false,
 									"visibility": "external"
 								},
 								{
 									"functionSelector": "e834cbb3",
-									"id": 12,
+									"id": 17,
 									"implemented": false,
 									"kind": "function",
 									"modifiers": [],
 									"name": "decreaseCount",
-									"nameLocation": "203:13:0",
+									"nameLocation": "269:13:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
-										"id": 10,
+										"id": 15,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "216:2:0"
+										"src": "282:2:0"
 									},
 									"returnParameters": {
-										"id": 11,
+										"id": 16,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "227:0:0"
+										"src": "302:0:0"
 									},
-									"scope": 13,
-									"src": "194:34:0",
-									"stateMutability": "nonpayable",
+									"scope": 18,
+									"src": "260:43:0",
+									"stateMutability": "payable",
 									"virtual": false,
 									"visibility": "external"
 								}
 							],
-							"scope": 14,
-							"src": "61:170:0",
+							"scope": 19,
+							"src": "61:245:0",
 							"usedErrors": [],
 							"usedEvents": []
 						}
 					],
-					"src": "33:198:0"
+					"src": "33:273:0"
 				},
 				"id": 0
 			}
