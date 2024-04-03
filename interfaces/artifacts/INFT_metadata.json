@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"interfaces/ICounter.sol": "I"
+			"interfaces/INFT.sol": "INFT"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"interfaces/ICounter.sol": {
-			"keccak256": "0xd26c137137a5e0449afc7440c874a4b55b7e8e5e683d4c88d50ed848a498ea8c",
+		"interfaces/INFT.sol": {
+			"keccak256": "0xd8bbf304fe0019b6f17cbb2724d54f5f6dd74c244222faafff95aa9e7f6d7109",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://58c9809ed9cb861919bd74f836b5568e328bad427d14fe8e08d80792ccaff26c",
-				"dweb:/ipfs/Qmd51EvtYkqEiqPCo6p8sWNqTc35TuMn5sMZ1pf3S85ZhL"
+				"bzz-raw://d54bc1377311fce9f656cde81503bbc794acc9edb1c6a27e648e430a0a8aa747",
+				"dweb:/ipfs/QmSXiL5z15tiNqH4Grf6KQMikYAazyo3LjuD9g9RMwebjy"
 			]
 		}
 	},

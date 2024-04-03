@@ -47,8 +47,65 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "SoldNFT",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "oldPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "UpdatedPrice",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "NFTContractAddresses",
+				"outputs": [
+					{
+						"internalType": "contract NFTContract",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "count",
+				"name": "NFTPrice",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -60,28 +117,38 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "counterActivated",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "minedNFTS",
 				"outputs": [
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes16",
+						"name": "dna",
+						"type": "bytes16"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "decreaseCount",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "increaseCount",
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "mintNFT",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -100,6 +167,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes16",
+						"name": "_dna",
+						"type": "bytes16"
+					}
+				],
+				"name": "purchaseNFT",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "renounceOwnership",
 				"outputs": [],
@@ -109,12 +194,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bool",
-						"name": "_counterActivated",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "_period",
+						"type": "uint256"
 					}
 				],
-				"name": "setCounterActivated",
+				"name": "setCooldown",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -128,6 +213,26 @@
 					}
 				],
 				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updatePrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawFunds",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -168,7 +273,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Counter.sol": "test"
+			"Main.sol": "MainContract"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -198,12 +303,44 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/Counter.sol": {
-			"keccak256": "0x3ee261aa7f8945ca2dfdd27b1fab79c760850fc33770216a78bef1d3f6c2706d",
+		"Main.sol": {
+			"keccak256": "0x0175367f6d16e7881df253dc0ac0e1fd37a1a8b4c90ff6aae392b41d4562967c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2c0286e7c6b8f05ed4f2cb3e4a62b0d91e22efd011d74a31f37f1e5cd71c6f5f",
-				"dweb:/ipfs/QmT2jwqwc9xxd326KLrkE4Nvfm6zFS5JtdgnzZMBLzpTfY"
+				"bzz-raw://88ab5d02e35d00b3461ecb4a3eca69f83ad1661887760aadea1838957c169c4a",
+				"dweb:/ipfs/Qmcu6eFVVKbtYhGPm3nDhdBA58fxyrsZeGE1p1zthM4TUv"
+			]
+		},
+		"contracts/NFT.sol": {
+			"keccak256": "0x2bea183ce5a98fe8634f372574ad8f1cdb3a3120ebfa59c32d5cd2668266a17d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5865da30d33d7f9a2bfd69b226d26a2224a4b7c2759cf30e3f4b9e24294a78c8",
+				"dweb:/ipfs/QmWVrotuBJrN4PDm2iu5VprdJr9NH7vcS13EtaP7ks1tm1"
+			]
+		},
+		"interfaces/IMain.sol": {
+			"keccak256": "0x7dc405775f1d46db9388226fa9856b935aac151f1ab93f0428413635f718f4c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://29312776fc6e86e92719dce1b6e8a6c0c758e18f9bced1ac1790bdb9f2a434d6",
+				"dweb:/ipfs/QmPmbCUMYpQf2pwfnmARbqLP3hgCCTCtSXs869u7ZA8P6Y"
+			]
+		},
+		"interfaces/INFT.sol": {
+			"keccak256": "0x52543ccc964bbae612f1b89401c1e14ae6fd8dcae8ac59ee4cfb6301e4c0a3ed",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8966bc9fef94193ae1f0ad0a97feb5f6facd451073e04f5bdd0eef1375d8f7a5",
+				"dweb:/ipfs/Qmcb3G6osx5CVPj41j5M8Zs4d1QjwvttTiBS3tMh8BJ7AF"
+			]
+		},
+		"structs.sol": {
+			"keccak256": "0x95ae269fc4c6ec2d99e93c4bccf474f8b6f6862f1db9520b9f0291b8745fcf9c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://80d1e9b611b4b3d58c3d44f3ad39574b1db2a5c0776362abf2cfb8b155fbb597",
+				"dweb:/ipfs/QmS1pMu8ATWmu4FgPZPnaQcJvgy4CxGtUDce2fVTX1LaDp"
 			]
 		}
 	},
